@@ -1,11 +1,9 @@
 import React from 'react';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div>oi leandro</div>
+      <div className="superinfo-bg">oi leandro</div>
     </>
   );
 }
