@@ -1,9 +1,14 @@
 import React from 'react';
+import Header from './Components/Header';
+import BodyNList from './Components/BodyNList';
 
 function App() {
   return (
     <>
-      <div className="superinfo-bg">oi leandro</div>
+      <div> 
+        <Header></Header>
+        <BodyNList></BodyNList>
+      </div>
     </>
   );
 }
