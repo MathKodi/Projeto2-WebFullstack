@@ -3,9 +3,9 @@ import React from 'react'
 const BodyNList = () => {
   return (
     <div>
-        <section>
-            <div>
-                <div>
+        <section class="conteudo">
+            <div class="content">
+                <div class="content-container">
                     <ul id="list">
 
                     </ul>
