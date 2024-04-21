@@ -2,7 +2,7 @@ import React from 'react'
 import InputButton from './InputButton'
 import './Header.css'
 
-const Header = () => {
+const Header = ({handleInput}) => {
   return (
     <div>
         <div class="superinfo-bg">
@@ -17,7 +17,7 @@ const Header = () => {
                 <h2>An API serving data on all in-game items and regions in Breath of the Wild and Tears of the Kingdom.</h2>
             </div>
         </header>
-        <InputButton></InputButton>
+        <InputButton handleInput = {handleInput}></InputButton>
     </div>
   )
 }
