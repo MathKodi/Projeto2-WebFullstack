@@ -1,5 +1,6 @@
 import React from 'react'
 import InputButton from './InputButton'
+import './Header.css'
 
 const Header = () => {
   return (

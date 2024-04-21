@@ -1,4 +1,5 @@
 import React from 'react'
+import "./BodyNList.css"
 
 const BodyNList = () => {
   return (

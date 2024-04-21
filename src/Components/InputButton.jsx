@@ -1,4 +1,5 @@
 import React from 'react'
+import "./InputButton.css"
 
 const InputButton = () => {
   return (
