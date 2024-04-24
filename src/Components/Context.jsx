@@ -1,9 +1,9 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from "react";
 
 const InputValueContext = createContext();
 
 export const InputValueProvider = ({ children }) => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
 
   return (
     <InputValueContext.Provider value={{ inputValue, setInputValue }}>

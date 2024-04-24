@@ -1,5 +1,5 @@
-import React from 'react';
-import './BodyNList.css';
+import React from "react";
+import "./BodyNList.css";
 
 const BodyNList = ({ data }) => {
   return (
@@ -12,7 +12,7 @@ const BodyNList = ({ data }) => {
                 <li>
                   {data.common_locations && (
                     <>
-                      Lugar comuns para se encontrar: {data.common_locations}{' '}
+                      Lugar comuns para se encontrar: {data.common_locations}{" "}
                       <br />
                     </>
                   )}

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import './InputButton.css';
-import { useInputValue } from './Context';
+import React, { useState } from "react";
+import "./InputButton.css";
+import { useInputValue } from "./Context";
 
 const InputButton = ({ onSearch, errorMessage }) => {
-  const {inputValue, setInputValue} = useInputValue();
+  const { inputValue, setInputValue } = useInputValue();
 
   const handleSearch = () => {
     onSearch(inputValue);
@@ -18,8 +18,8 @@ const InputButton = ({ onSearch, errorMessage }) => {
           id="input"
         />
         <button className="btn" id="btn" onClick={handleSearch}>
-          {' '}
-          Search{' '}
+          {" "}
+          Search{" "}
         </button>
         {errorMessage && <p>{errorMessage}</p>}
       </div>
