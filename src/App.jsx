@@ -32,8 +32,7 @@ function App() {
   return (
     <>
       <Header></Header>
-      <InputButton onSearch={handleSearch} />
-      <p className={errorMessage ? '' : 'hidden'}>{errorMessage}</p>
+      <InputButton onSearch={handleSearch} errorMessage={errorMessage} />
       <BodyNList data={searchResult}></BodyNList>
     </>
   );

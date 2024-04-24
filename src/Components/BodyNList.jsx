@@ -8,30 +8,32 @@ const BodyNList = ({ data }) => {
         <div class="content-container">
           <ul id="list">
             {data && (
-              <li>
-                {data.common_locations && (
-                  <>
-                    Lugar comuns para se encontrar: {data.common_locations}{' '}
-                    <br />
-                  </>
-                )}
-                {data.description && (
-                  <>
-                    Descrição: {data.description} <br />
-                  </>
-                )}
-                {data.drops && (
-                  <>
-                    Drops: {data.drops} <br />
-                  </>
-                )}
-                {data.name && (
-                  <>
-                    Nome: {data.name} <br />
-                  </>
-                )}
-                {data.image && <img src={data.image} alt="Imagem do item" />}
-              </li>
+              <>
+                <li>
+                  {data.common_locations && (
+                    <>
+                      Lugar comuns para se encontrar: {data.common_locations}{' '}
+                      <br />
+                    </>
+                  )}
+                  {data.description && (
+                    <>
+                      Descrição: {data.description} <br />
+                    </>
+                  )}
+                  {data.drops && (
+                    <>
+                      Drops: {data.drops} <br />
+                    </>
+                  )}
+                  {data.name && (
+                    <>
+                      Nome: {data.name} <br />
+                    </>
+                  )}
+                </li>
+                <img src={data.image} alt="Imagem do item" />
+              </>
             )}
           </ul>
         </div>
