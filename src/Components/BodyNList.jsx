@@ -32,7 +32,7 @@ const BodyNList = ({ data }) => {
                     </>
                   )}
                 </li>
-                <img src={data.image} alt="Imagem do item" />
+                {data.image && <img src={data.image} alt="Imagem do item" />}
               </>
             )}
           </ul>
