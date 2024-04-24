@@ -19,7 +19,13 @@ function App() {
       fetch(
         `https://botw-compendium.herokuapp.com/api/v3/compendium/entry/${inputValue}`,
       )
-        .then((response) => response.json())
+        .then((response) => {
+          if(response.status === 200){
+            return response.json();
+          } else{
+            throw new Error("Errokkkkkkkkkkkkkkkkk")
+          }
+        })
         .then((data) => {
           setSearchResult((result) => [...result, data.data])
         })
