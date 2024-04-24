@@ -13,7 +13,7 @@ function App() {
 
   const handleSearch = (inputValue) => {
     if (inputValue.trim() === '') {
-      setErrorMessage('Se você não digitar nada me complica né paizão');
+      setErrorMessage('Não deixe a caixa de input vazia, faz favor mano tu já é grandinho já');
     } else {
       setErrorMessage('');
       fetch(
@@ -23,17 +23,22 @@ function App() {
           if(response.status === 200){
             return response.json();
           } else{
-            throw new Error("Errokkkkkkkkkkkkkkkkk")
+            throw new Error("Digite um número entre 1 e 389 ou um nome de uma entidade existente, por gentileza amigão!")
           }
         })
         .then((data) => {
+          {searchResult.map((searched) => {
+            if(searched.name === data.data.name){
+              throw new Error("Entidade ja pesquisada mano! Dá uma olhada aí que cê acha ela!")
+            }
+          })}
           setSearchResult((result) => [...result, data.data])
         })
         .catch((error) => {
-          console.error('Erro ao buscar dados:', error);
           setErrorMessage(
-            'Erro ao buscar dados. Por favor, tente novamente mais tarde.',
+            `${error.message}`,
           );
+          console.log(error);
         });
     }
   };
