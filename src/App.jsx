@@ -13,7 +13,8 @@ function App() {
     <>
       <div> 
         <Header handleInput={handleInput} ></Header>
-        <BodyNList></BodyNList>
+        <BodyNList input={input}></BodyNList>
+        <p>{input}</p>
       </div>
     </>
   );
