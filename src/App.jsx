@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Header from './Components/Header';
 import BodyNList from './Components/BodyNList';
 import InputButton from './Components/InputButton';
@@ -12,7 +12,8 @@ function App() {
     console.log(searchResult);
   }, [searchResult])
 
-  const handleSearch = (inputValue) => {
+  const handleSearch = useMemo(() => {
+    return(inputValue) => {
     if (inputValue.trim() === '') {
       setErrorMessage('Não deixe a caixa de input vazia, faz favor mano tu já é grandinho já');
     } else {
@@ -42,7 +43,9 @@ function App() {
           console.log(error);
         });
     }
-  };
+    }}
+    )
+
 
   return (
     <>
