@@ -7,15 +7,15 @@ const InputButton = ({ onSearch, errorMessage }) => {
     onSearch(inputValue);
   };
   return (
-    <div class="search-bg">
-      <div class="search">
+    <div className="search-bg">
+      <div className="search">
         <input
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           id="input"
         />
-        <button class="btn" id="btn" onClick={handleSearch}>
+        <button className="btn" id="btn" onClick={handleSearch}>
           {' '}
           Search{' '}
         </button>

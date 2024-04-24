@@ -3,9 +3,9 @@ import './BodyNList.css';
 
 const BodyNList = ({ data }) => {
   return (
-    <section class="conteudo">
-      <div class="content">
-        <div class="content-container">
+    <section className="conteudo">
+      <div className="content">
+        <div className="content-container">
           <ul id="list">
             {data && (
               <>
