@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './Components/Header';
 import BodyNList from './Components/BodyNList';
 import InputButton from './Components/InputButton';
+import { InputValueProvider, useInputValue } from './Components/Context';
 
 function App() {
   const [searchResult, setSearchResult] = useState([]);
@@ -45,11 +46,13 @@ function App() {
 
   return (
     <>
-      <Header></Header>
-      <InputButton onSearch={handleSearch} errorMessage={errorMessage} />
-      {searchResult.map((result, index) => (
-        <BodyNList key={index} data={result}></BodyNList>
-      ))}
+      <InputValueProvider>
+        <Header></Header>
+        <InputButton onSearch={handleSearch} errorMessage={errorMessage} />
+        {searchResult.map((result, index) => (
+          <BodyNList key={index} data={result}></BodyNList>
+        ))}
+      </InputValueProvider>
       
     </>
   );

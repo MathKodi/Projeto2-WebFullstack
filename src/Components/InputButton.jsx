@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './InputButton.css';
+import { useInputValue } from './Context';
+
 const InputButton = ({ onSearch, errorMessage }) => {
-  const [inputValue, setInputValue] = useState('');
+  const {inputValue, setInputValue} = useInputValue();
 
   const handleSearch = () => {
     onSearch(inputValue);
