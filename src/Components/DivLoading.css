@@ -12,8 +12,9 @@
   padding-top: 10px;
 }
 .DivLoading h1 {
-  margin: 0 10px 10px 10px;
+  margin: 50px 20px 20px;
 }
 .DivLoading img {
+  height: 150px;
   margin: 0 10px 10px 10px;
 }
