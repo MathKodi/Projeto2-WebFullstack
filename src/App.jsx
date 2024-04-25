@@ -62,10 +62,10 @@ function App() {
       <InputValueProvider>
         <Header></Header>
         <InputButton onSearch={handleSearch} errorMessage={errorMessage} />
+        {carregando && <DivLoading />}
         {searchResult.map((result, index) => (
           <BodyNList key={index} data={result}></BodyNList>
         ))}
-        {carregando && <DivLoading />}
       </InputValueProvider>
     </>
   );
