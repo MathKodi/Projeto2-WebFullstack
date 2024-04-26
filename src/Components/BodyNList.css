@@ -10,28 +10,24 @@
 .content-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 #list {
     display: flex;
     flex-wrap: wrap;
     max-width: 960px;
-    align-content: flex-end;
+    justify-content: center;
+   
 }
 
-#list li {
-    border: 2px outset #50505077;
-    flex: 1 1 630px;
-    padding-top: 20px;
-    padding-left: 20px;
-    font-size: 1.25em;
-    line-height: 1.4;
+#list li { 
     margin-bottom: 2em;
     margin-top: 1em;
-    color: #4e4e4e;
+    margin-right: 2em;
 }
+
 
 #list img {
     margin: 0 auto;
-    padding: 20px 20px 40px 20px;
 }

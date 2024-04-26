@@ -1,38 +1,46 @@
-import React from 'react'
+import React from 'react';
+import Card from 'react-bootstrap/Card';
 
-const LiGenerating = ({data}) => {
+const LiGenerating = ({ data }) => {
   return (
     <>
-        {data && (
-              <>
-                <li>
-                  {data.common_locations && (
-                    <>
-                      Lugar comuns para se encontrar: {data.common_locations}{" "}
-                      <br />
-                    </>
-                  )}
-                  {data.description && (
-                    <>
-                      Descrição: {data.description} <br />
-                    </>
-                  )}
-                  {data.drops && (
-                    <>
-                      Drops: {data.drops} <br />
-                    </>
-                  )}
-                  {data.name && (
-                    <>
-                      Nome: {data.name} <br />
-                    </>
-                  )}
-                </li>
-                {data.image && <img src={data.image} alt="Imagem do item" />}
-              </>
-            )}
+      {data && (
+        <>
+          <li>
+            <Card
+              border="secondary"
+              bg="dark"
+              text="white"
+              style={{ width: '20rem' }}
+            >
+              <Card.Img variant="top" src={data.image} alt={data.name} />
+              <Card.Header>Nome: {data.name}</Card.Header>
+              <Card.Body>
+                {data.common_locations && (
+                  <>
+                    <Card.Title> Lugar comuns para se encontrar: </Card.Title>
+                    <Card.Text>{data.common_locations} </Card.Text>
+                  </>
+                )}
+                {data.description && (
+                  <>
+                    <Card.Title>Descrição:</Card.Title>
+                    <Card.Text>{data.description}</Card.Text>
+                  </>
+                )}
+                {data.drops && (
+                  <>
+                    <Card.Title>Drops: </Card.Title>
+                    <Card.Text>{data.drops}</Card.Text>
+                  </>
+                )}
+              </Card.Body>
+            </Card>
+          </li>
+        </>
+      )}
     </>
-  )
-}
+  );
+};
 
-export default LiGenerating
+export default LiGenerating;
