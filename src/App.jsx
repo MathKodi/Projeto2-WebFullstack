@@ -10,6 +10,7 @@ function App() {
   const [errorMessage, setErrorMessage] = useState('');
   const [carregando, setCarregando] = useState(null);
 
+  //Log aplicação
   useEffect(() => {
     console.log(searchResult);
   }, [searchResult]);
@@ -62,11 +63,11 @@ function App() {
   return (
     <>
       <InputValueProvider>
-        <Header></Header>
+        <Header/>
         <InputButton onSearch={handleSearch} errorMessage={errorMessage} />
         {carregando && <DivLoading />}
         {searchResult.map((result, index) => (
-          <BodyNList key={index} data={result}></BodyNList>
+          <BodyNList key={index} data={result}/>
         ))}
       </InputValueProvider>
     </>

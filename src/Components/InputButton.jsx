@@ -8,6 +8,7 @@ const InputButton = ({ onSearch, errorMessage }) => {
   const handleSearch = () => {
     onSearch(inputValue);
   };
+  
   return (
     <div className="search-bg">
       <div className="search">
@@ -17,10 +18,7 @@ const InputButton = ({ onSearch, errorMessage }) => {
           onChange={(e) => setInputValue(e.target.value)}
           id="input"
         />
-        <button className="btn" id="btn" onClick={handleSearch}>
-          {" "}
-          Search{" "}
-        </button>
+        <button className="btn" id="btn" onClick={handleSearch}> Search </button>
         {errorMessage && <p>{errorMessage}</p>}
       </div>
     </div>
