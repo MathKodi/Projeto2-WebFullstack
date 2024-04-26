@@ -62,14 +62,12 @@ function App() {
 
   return (
     <>
+      <Header/>
       <InputValueProvider>
-        <Header/>
         <InputButton onSearch={handleSearch} errorMessage={errorMessage} />
-        {carregando && <DivLoading />}
-        {searchResult.map((result, index) => (
-          <BodyNList key={index} data={result}/>
-        ))}
       </InputValueProvider>
+      {carregando && <DivLoading />}
+      <BodyNList data={searchResult}></BodyNList>  
     </>
   );
 }

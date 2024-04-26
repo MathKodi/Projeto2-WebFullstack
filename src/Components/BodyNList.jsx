@@ -1,5 +1,6 @@
 import React from "react";
 import "./BodyNList.css";
+import LiGenerating from "./LiGenerating";
 
 const BodyNList = ({ data }) => {
   return (
@@ -7,34 +8,9 @@ const BodyNList = ({ data }) => {
       <div className="content">
         <div className="content-container">
           <ul id="list">
-            {data && (
-              <>
-                <li>
-                  {data.common_locations && (
-                    <>
-                      Lugar comuns para se encontrar: {data.common_locations}{" "}
-                      <br />
-                    </>
-                  )}
-                  {data.description && (
-                    <>
-                      Descrição: {data.description} <br />
-                    </>
-                  )}
-                  {data.drops && (
-                    <>
-                      Drops: {data.drops} <br />
-                    </>
-                  )}
-                  {data.name && (
-                    <>
-                      Nome: {data.name} <br />
-                    </>
-                  )}
-                </li>
-                {data.image && <img src={data.image} alt="Imagem do item" />}
-              </>
-            )}
+            {data.map((result, index) => (
+            <LiGenerating key={index} data={result}/>
+             ))}
           </ul>
         </div>
       </div>
