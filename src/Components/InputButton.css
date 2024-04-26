@@ -1,5 +1,5 @@
 .search-bg {
-    background-color: #BFBFBF;
+    background: #4F6F52;
 }
 
 .search {
@@ -23,6 +23,7 @@
     font-family: Georgia, serif;
     padding: 5px;
     float: left;
+    color: #252525;
 }
 
 #btn {

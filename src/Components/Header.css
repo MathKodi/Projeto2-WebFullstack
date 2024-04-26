@@ -21,7 +21,9 @@
 
 /*Header*/
 .menu-bg {
-    background-color: #5D7A44;
+    background-image: url(/public/805656.jpg);
+    background-size: cover;
+    background-position: top;
 }
 
 .menu {
