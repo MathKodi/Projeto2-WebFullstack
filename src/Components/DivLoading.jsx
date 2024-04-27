@@ -6,7 +6,6 @@ function DivLoading() {
     <div className="DivLoading-bg">
       <div className="DivLoading">
         <h1>Carregando...</h1>
-        <img src="./public/loading.gif" alt="carregando..." />
       </div>
     </div>
   );
