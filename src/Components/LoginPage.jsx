@@ -1,15 +1,39 @@
 import React from 'react'
 import { useState } from 'react'
 
-const LoginPage = () => {
+const LoginPage = ({changePage}) => {
 
   const [login, setLogin] = useState("");
   const [senha, setSenha] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
+    console.log(login)
     event.preventDefault();
-    setLogin("");
-    setSenha("");
+
+    const logging = {
+      login: login,
+      senha: senha
+    }
+
+    try{
+      const response =  await fetch('http://localhost:3000/login' , {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(logging)
+      })
+      if(response.ok) {
+        const data =  await response.json();
+        console.log("Login bem sucedido:", data)
+        changePage(true)
+      } else{
+        const errors = await response.json()
+        console.log(errors)
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
@@ -18,7 +42,7 @@ const LoginPage = () => {
           <div>
             <label> 
               <span>Login: </span>
-              <input type='text' name='login' placeholder='Digite seu login aqui' onChange={(e) => setLogin(e.target.value)}></input>
+              <input type='text' name='login' placeholder='Digite seu login aqui' onChange={(e) => setLogin(e.target.value) }></input>
             </label>
           </div>
           <label>

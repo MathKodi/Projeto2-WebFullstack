@@ -8,6 +8,7 @@ const Header = () => {
         <div className="superinfo">
           <p>Trabalho FullStack - UTFPR</p>
           <p>Alunos: Matheus Kodi Y. | Leandro Henrique Oliveira Neves </p>
+          <button className="newBtn" id='newBtn'> Loggout</button>
         </div>
       </div>
       <header className="menu-bg">

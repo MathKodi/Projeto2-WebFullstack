@@ -62,12 +62,13 @@ const LoggedPage = () => {
 
   return (
     <div>
-        <Header/>
+      <Header>
       <InputValueProvider>
         <InputButton onSearch={handleSearch} errorMessage={errorMessage} />
       </InputValueProvider>
       {carregando && <DivLoading />}
       <BodyNList data={searchResult}></BodyNList>  
+      </Header>
     </div>
   )
 }
