@@ -1,56 +1,70 @@
-import React from 'react'
-import { useState } from 'react'
+import React from 'react';
+import { useState } from 'react';
+import './LoginPage.css';
 
-const LoginPage = ({changePage, tokenHandle}) => {
-
-  const [login, setLogin] = useState("");
-  const [senha, setSenha] = useState("");
+const LoginPage = ({ changePage, tokenHandle }) => {
+  const [login, setLogin] = useState('');
+  const [senha, setSenha] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const logging = {
       login: login,
-      senha: senha
-    }
+      senha: senha,
+    };
 
-    try{
-      const response =  await fetch('http://localhost:3000/login' , {
+    try {
+      const response = await fetch('http://localhost:3000/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(logging)
-      })
-      if(response.ok) {
-        const data =  await response.json();
-        tokenHandle(data.token)
-        changePage(true)
-      } else{
-        const errors = await response.json()
+        body: JSON.stringify(logging),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        tokenHandle(data.token);
+        changePage(true);
+      } else {
+        const errors = await response.json();
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   return (
-    <div>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label> 
-              <span>Login: </span>
-              <input type='text' name='login' placeholder='Digite seu login aqui' onChange={(e) => setLogin(e.target.value) }></input>
-            </label>
-          </div>
-          <label>
-            <span>Senha: </span>
-            <input type='password' name='senha' placeholder='Digite sua senha aqui'  onChange={(e) => setSenha(e.target.value)} />
+    <div class="form-container">
+      <form onSubmit="{handleSubmit}">
+        <div class="form-group">
+          <label for="login">
+            <span>Login:</span>
+            <input
+              type="text"
+              id="login"
+              name="login"
+              placeholder="Digite seu login aqui"
+              onChange="{(e) => setLogin(e.target.value)}"
+            />
           </label>
-          <input type="submit" value="Enviar" />
-        </form>
+        </div>
+        <div class="form-group">
+          <label for="senha">
+            <span>Senha:</span>
+            <input
+              type="password"
+              id="senha"
+              name="senha"
+              placeholder="Digite sua senha aqui"
+              onChange="{(e) => setSenha(e.target.value)}"
+            />
+          </label>
+        </div>
+        <input type="submit" value="Enviar" class="submit-button" />
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default LoginPage
+export default LoginPage;
