@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import LoggedPage from './Components/LoggedPage';
 import LoginPage from './Components/LoginPage';
 
@@ -15,6 +15,12 @@ function App() {
     setToken(token)
     localStorage.setItem('token', token)
   }
+
+  const loggoutHandle = useCallback(() => {
+    localStorage.removeItem('token');
+    setToken('');
+    setPage(null)
+  })
 
   const checkToken = async () => {
     try{
@@ -41,7 +47,7 @@ function App() {
   return (
     <>
       {!page && <LoginPage changePage={changePage} tokenHandle={tokenHandle}></LoginPage>}
-      {page && <LoggedPage changePage={changePage}></LoggedPage>}
+      {page && <LoggedPage changePage={changePage} loggoutHandle={loggoutHandle}></LoggedPage>}
     </>
   );
 }

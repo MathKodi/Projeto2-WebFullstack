@@ -4,7 +4,7 @@ import BodyNList from './BodyNList';
 import InputButton from './InputButton';
 import { InputValueProvider } from './Context';
 import DivLoading from './DivLoading';
-const LoggedPage = () => {
+const LoggedPage = ({loggoutHandle}) => {
 
     const [searchResult, setSearchResult] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
@@ -62,7 +62,7 @@ const LoggedPage = () => {
 
   return (
     <div>
-      <Header>
+      <Header loggoutHandle={loggoutHandle}>
       <InputValueProvider>
         <InputButton onSearch={handleSearch} errorMessage={errorMessage} />
       </InputValueProvider>
