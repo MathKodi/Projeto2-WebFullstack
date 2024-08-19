@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-const LoginPage = ({changePage}) => {
+const LoginPage = ({changePage, tokenHandle}) => {
 
   const [login, setLogin] = useState("");
   const [senha, setSenha] = useState("");
@@ -25,11 +25,11 @@ const LoginPage = ({changePage}) => {
       })
       if(response.ok) {
         const data =  await response.json();
-        console.log("Login bem sucedido:", data)
+        console.log("Login bem sucedido:", data.token)
+        tokenHandle(data.token)
         changePage(true)
       } else{
         const errors = await response.json()
-        console.log(errors)
       }
     } catch (error) {
       console.log(error)
