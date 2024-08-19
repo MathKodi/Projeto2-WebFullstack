@@ -29,12 +29,9 @@ function App() {
         headers: {
           'Content-Type' : 'application/json',
           'Authorization' : `Bearer ${localStorage.getItem('token')}`
-        },
-        body: JSON.stringify({login: '', senha: ''})
+        }
       })
-      //console.log(response)
       if(response.ok) {
-        console.log("response ok")
         setPage(true);
       }
     } catch (error){

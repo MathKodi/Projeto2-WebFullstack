@@ -7,7 +7,6 @@ const LoginPage = ({changePage, tokenHandle}) => {
   const [senha, setSenha] = useState("");
 
   const handleSubmit = async (event) => {
-    console.log(login)
     event.preventDefault();
 
     const logging = {
@@ -25,7 +24,6 @@ const LoginPage = ({changePage, tokenHandle}) => {
       })
       if(response.ok) {
         const data =  await response.json();
-        console.log("Login bem sucedido:", data.token)
         tokenHandle(data.token)
         changePage(true)
       } else{
