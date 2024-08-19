@@ -35,34 +35,36 @@ const LoginPage = ({ changePage, tokenHandle }) => {
   };
 
   return (
-    <div class="form-container">
-      <form onSubmit="{handleSubmit}">
-        <div class="form-group">
-          <label for="login">
-            <span>Login:</span>
-            <input
-              type="text"
-              id="login"
-              name="login"
-              placeholder="Digite seu login aqui"
-              onChange="{(e) => setLogin(e.target.value)}"
-            />
-          </label>
-        </div>
-        <div class="form-group">
-          <label for="senha">
-            <span>Senha:</span>
-            <input
-              type="password"
-              id="senha"
-              name="senha"
-              placeholder="Digite sua senha aqui"
-              onChange="{(e) => setSenha(e.target.value)}"
-            />
-          </label>
-        </div>
-        <input type="submit" value="Enviar" class="submit-button" />
-      </form>
+    <div class="login-page">
+      <div class="form-container">
+        <form onSubmit={handleSubmit}>
+          <div class="form-group">
+            <label for="login">
+              <span>Login:</span>
+              <input
+                type="text"
+                id="login"
+                name="login"
+                placeholder="Digite seu login aqui"
+                onChange={(e) => setLogin(e.target.value)}
+              />
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="senha">
+              <span>Senha:</span>
+              <input
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Digite sua senha aqui"
+                onChange={(e) => setSenha(e.target.value)}
+              />
+            </label>
+          </div>
+          <input type="submit" value="Enviar" class="submit-button" />
+        </form>
+      </div>
     </div>
   );
 };
