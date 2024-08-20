@@ -62,13 +62,12 @@ const LoggedPage = ({loggoutHandle}) => {
 
   return (
     <div>
-      <Header loggoutHandle={loggoutHandle}>
+      <Header loggoutHandle={loggoutHandle}/>
       <InputValueProvider>
         <InputButton onSearch={handleSearch} errorMessage={errorMessage} />
       </InputValueProvider>
       {carregando && <DivLoading />}
-      <BodyNList data={searchResult}></BodyNList>  
-      </Header>
+      <BodyNList data={searchResult}></BodyNList> 
     </div>
   )
 }
