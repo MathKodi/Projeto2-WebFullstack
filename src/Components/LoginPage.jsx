@@ -5,9 +5,15 @@ import './LoginPage.css';
 const LoginPage = ({ changePage, tokenHandle }) => {
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    if (login.trim() === '' || senha.trim() === '') {
+      setErrorMessage('Por favor, preencha todos os campos.');
+      return;
+    }
 
     const logging = {
       login: login,
@@ -28,8 +34,12 @@ const LoginPage = ({ changePage, tokenHandle }) => {
         changePage(true);
       } else {
         const errors = await response.json();
+        setErrorMessage(
+          errors.message || 'Erro ao fazer login. Verifique suas credenciais.',
+        );
       }
     } catch (error) {
+      setErrorMessage('deu ruim )');
       console.log(error);
     }
   };
@@ -62,6 +72,7 @@ const LoginPage = ({ changePage, tokenHandle }) => {
               />
             </label>
           </div>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
           <input type="submit" value="Enviar" className="submit-button" />
         </form>
       </div>
