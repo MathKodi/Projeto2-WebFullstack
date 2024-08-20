@@ -35,11 +35,11 @@ const LoginPage = ({ changePage, tokenHandle }) => {
   };
 
   return (
-    <div class="login-page">
-      <div class="form-container">
+    <div className="login-page">
+      <div className="form-container">
         <form onSubmit={handleSubmit}>
-          <div class="form-group">
-            <label for="login">
+          <div className="form-group">
+            <label htmlFor="login">
               <span>Login:</span>
               <input
                 type="text"
@@ -50,8 +50,8 @@ const LoginPage = ({ changePage, tokenHandle }) => {
               />
             </label>
           </div>
-          <div class="form-group">
-            <label for="senha">
+          <div className="form-group">
+            <label htmlFor="senha">
               <span>Senha:</span>
               <input
                 type="password"
@@ -62,7 +62,7 @@ const LoginPage = ({ changePage, tokenHandle }) => {
               />
             </label>
           </div>
-          <input type="submit" value="Enviar" class="submit-button" />
+          <input type="submit" value="Enviar" className="submit-button" />
         </form>
       </div>
     </div>

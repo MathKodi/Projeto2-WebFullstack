@@ -16,7 +16,7 @@ const LoggedPage = ({loggoutHandle}) => {
     }, [searchResult]);
   
     const apiFunction = (inputValue) => {
-      fetch(`https://botw-compendium.herokuapp.com/api/v3/compendium/entry/${inputValue}`)
+      fetch(`http://localhost:3000/post/${inputValue}`)
       .then((response) => {
         if (response.status === 200) {
           setCarregando(false);
@@ -30,15 +30,17 @@ const LoggedPage = ({loggoutHandle}) => {
       })
       .then((data) => {
         {
+          console.log(data.existPost.image)
           searchResult.map((searched) => {
-            if (searched.name === data.data.name) {
+            if (searched.name === data.existPost.name) {
               throw new Error(
                 'Entidade ja pesquisada mano! Dá uma olhada aí que cê acha ela!',
               );
             }
           });
         }
-        setSearchResult((result) => [...result, data.data]);
+        setSearchResult((result) => [...result, data.existPost]);
+        console.log(searchResult)
       })
       .catch((error) => {
         setErrorMessage(`${error.message}`);

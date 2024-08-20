@@ -16,10 +16,10 @@ const LiGenerating = ({ data }) => {
               <Card.Img variant="top" src={data.image} alt={data.name} />
               <Card.Header>Nome: {data.name}</Card.Header>
               <Card.Body>
-                {data.common_locations && (
+                {data.commonPlaces && (
                   <>
                     <Card.Title> Lugar comuns para se encontrar: </Card.Title>
-                    <Card.Text>{data.common_locations} </Card.Text>
+                    <Card.Text>{data.commonPlaces} </Card.Text>
                   </>
                 )}
                 {data.description && (
