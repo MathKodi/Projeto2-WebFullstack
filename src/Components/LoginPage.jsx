@@ -45,36 +45,38 @@ const LoginPage = ({ changePage, tokenHandle }) => {
   };
 
   return (
-    <div className="login-page">
-      <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="login">
-              <span>Login:</span>
-              <input
-                type="text"
-                id="login"
-                name="login"
-                placeholder="Digite seu login aqui"
-                onChange={(e) => setLogin(e.target.value)}
-              />
-            </label>
-          </div>
-          <div className="form-group">
-            <label htmlFor="senha">
-              <span>Senha:</span>
-              <input
-                type="password"
-                id="senha"
-                name="senha"
-                placeholder="Digite sua senha aqui"
-                onChange={(e) => setSenha(e.target.value)}
-              />
-            </label>
-          </div>
-          {errorMessage && <p className="error-message">{errorMessage}</p>}
-          <input type="submit" value="Enviar" className="submit-button" />
-        </form>
+    <div className="login-bg">
+      <div className="login-page">
+        <div className="form-container">
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="login">
+                <span>Login:</span>
+                <input
+                  type="text"
+                  id="login"
+                  name="login"
+                  placeholder="Digite seu login aqui"
+                  onChange={(e) => setLogin(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="form-group">
+              <label htmlFor="senha">
+                <span>Senha:</span>
+                <input
+                  type="password"
+                  id="senha"
+                  name="senha"
+                  placeholder="Digite sua senha aqui"
+                  onChange={(e) => setSenha(e.target.value)}
+                />
+              </label>
+            </div>
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
+            <input type="submit" value="Enviar" className="submit-button" />
+          </form>
+        </div>
       </div>
     </div>
   );

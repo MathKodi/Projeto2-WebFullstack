@@ -1,4 +1,7 @@
-
+.login-bg{
+    background-image: url(/public/805656.jpg);
+    height: 950px;
+}
 .error-message {
   color: red;
   font-size: 14px;
@@ -6,7 +9,6 @@
 }
 
 .login-page {
-  background-color: #f8f9fa;
   padding: 20px 0;
     color: #F4F1DE;
     max-width: 960px;
