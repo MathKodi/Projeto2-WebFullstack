@@ -35,7 +35,7 @@ const LoggedPage = ({loggoutHandle}) => {
           searchResult.map((searched) => {
             if (searched.name === data.existPost.name) {
               throw new Error(
-                'Entidade ja pesquisada mano! Dá uma olhada aí que cê acha ela!',
+                'Entidade ja pesquisada ou adicionada mano! Dá uma olhada aí que cê acha ela!',
               );
             }
           });
