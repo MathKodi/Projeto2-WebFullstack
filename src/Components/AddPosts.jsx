@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 
-const AddPosts = ({onSearch}) => {
+const AddPosts = ({onSearch, errorMessage, handleErrorMessage}) => {
     const [name, setName] = useState("")
     const [commonPlaces, setCommonplaces] = useState("")
     const [description, setDescription] = useState("")
@@ -19,7 +19,7 @@ const AddPosts = ({onSearch}) => {
           commonPlaces: commonPlaces,
           description: description,
           drops: drops,
-          image: image  
+          image: image
         };
     
         try {
@@ -36,6 +36,7 @@ const AddPosts = ({onSearch}) => {
             handleSearch()
           } else {
             const errors = await response.json();
+            handleErrorMessage(errors.msg)
           }
         } catch (error) {
           console.log(error);

@@ -49,6 +49,10 @@ const LoggedPage = ({loggoutHandle}) => {
       });
     }
   
+    const handleErrorMessage = (erro) =>{ 
+      setErrorMessage(erro);
+    }
+
     const handleSearch = useMemo(() => {
       return (inputValue) => {
         if (inputValue.trim() === '') {
@@ -67,9 +71,9 @@ const LoggedPage = ({loggoutHandle}) => {
     <div>
       <Header loggoutHandle={loggoutHandle}/>
       <InputValueProvider>
-        <InputButton onSearch={handleSearch} errorMessage={errorMessage} />
+        <InputButton onSearch={handleSearch} errorMessage={errorMessage}/>
       </InputValueProvider>
-      <AddPosts onSearch={handleSearch}></AddPosts>
+      <AddPosts onSearch={handleSearch} errorMessage={errorMessage} handleErrorMessage={handleErrorMessage}></AddPosts>
       {carregando && <DivLoading />}
       <BodyNList data={searchResult}></BodyNList> 
     </div>

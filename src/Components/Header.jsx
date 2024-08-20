@@ -18,9 +18,6 @@ const Header = ({loggoutHandle}) => {
             An API serving data on all in-game items and regions in Breath of
             the Wild and Tears of the Kingdom.
           </h2>
-          <h6>
-            Digite um número entre 1 e 389 ou um nome de uma entidade existente
-          </h6>
         </div>
       </header>
     </div>
