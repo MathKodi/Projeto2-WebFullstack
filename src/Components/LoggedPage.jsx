@@ -4,6 +4,7 @@ import BodyNList from './BodyNList';
 import InputButton from './InputButton';
 import { InputValueProvider } from './Context';
 import DivLoading from './DivLoading';
+import AddPosts from './AddPosts';
 const LoggedPage = ({loggoutHandle}) => {
 
     const [searchResult, setSearchResult] = useState([]);
@@ -68,6 +69,7 @@ const LoggedPage = ({loggoutHandle}) => {
       <InputValueProvider>
         <InputButton onSearch={handleSearch} errorMessage={errorMessage} />
       </InputValueProvider>
+      <AddPosts onSearch={handleSearch}></AddPosts>
       {carregando && <DivLoading />}
       <BodyNList data={searchResult}></BodyNList> 
     </div>
