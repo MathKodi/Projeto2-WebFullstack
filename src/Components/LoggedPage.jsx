@@ -17,7 +17,7 @@ const LoggedPage = ({loggoutHandle}) => {
     }, [searchResult]);
   
     const apiFunction = (inputValue) => {
-      fetch(`http://localhost:3000/post/${inputValue}`)
+      fetch(`https://localhost:3000/post/${inputValue}`)
       .then((response) => {
         if (response.status === 200) {
           setCarregando(false);

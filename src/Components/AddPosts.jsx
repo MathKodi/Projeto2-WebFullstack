@@ -24,7 +24,7 @@ const AddPosts = ({ onSearch, errorMessage, handleErrorMessage }) => {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/post', {
+      const response = await fetch('https://localhost:3000/post', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
