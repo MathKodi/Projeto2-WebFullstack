@@ -23,11 +23,14 @@ const AddPosts = ({ onSearch, errorMessage, handleErrorMessage }) => {
       image: image,
     };
 
+    const token = localStorage.getItem('token');
+
     try {
       const response = await fetch('https://localhost:3000/post', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify(post),
       });

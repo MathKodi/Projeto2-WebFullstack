@@ -17,7 +17,16 @@ const LoggedPage = ({loggoutHandle}) => {
     }, [searchResult]);
   
     const apiFunction = (inputValue) => {
-      fetch(`https://localhost:3000/post/${inputValue}`)
+
+      const token = localStorage.getItem('token');
+
+      fetch(`https://localhost:3000/post/${inputValue}`, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+        },
+      })
       .then((response) => {
         if (response.status === 200) {
           setCarregando(false);
